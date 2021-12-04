@@ -17,6 +17,6 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file ./TestActions/TestActions.WebApp/Dockerfile --tag ghcr.io/zorinivana/my-image-name
     - name: login
-      run: docker login ghcr.io -u zorinivana --password-stdin
+      run: echo ${{ secrets.GITHUB_TOKEN }} | docker login ghcr.io -u zorinivana --password-stdin
     - name: push
       run: docker push ghcr.io/zorinivana/my-image-name:latest
