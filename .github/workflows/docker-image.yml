@@ -16,5 +16,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build the Docker image
       run: docker build . --file ./TestActions/TestActions.WebApp/Dockerfile --tag ghcr.io/zorinivana/my-image-name
-    - name: commit
+    - name: login
+      run: docker login ghcr.io -u zorinivana --password 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
+    - name: push
       run: docker push ghcr.io/zorinivana/my-image-name:latest
