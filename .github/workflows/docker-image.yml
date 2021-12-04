@@ -15,6 +15,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file ./TestActions/TestActions.WebApp/Dockerfile --tag my-image-name
-    - name: Push
+      run: docker build . --file ./TestActions/TestActions.WebApp/Dockerfile --tag ghcr.io/zorivana/my-image-name
+    - name: commit
       run: docker push ghcr.io/zorivana/my-image-name:latest
